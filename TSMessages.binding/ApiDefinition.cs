@@ -1,7 +1,7 @@
 using System;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using ObjCRuntime;
+using Foundation;
+using UIKit;
 
 namespace TSMessages
 {	
@@ -96,7 +96,7 @@ namespace TSMessages
 	public partial interface TSMessageViewProtocol {
 
 		[Export ("navigationbarBottomOfViewController:")]
-		float NavigationbarBottomOfViewController (UIViewController viewController);
+		nfloat NavigationbarBottomOfViewController (UIViewController viewController);
 	}
 
 	public interface ITSMessageViewProtocol {}
@@ -114,7 +114,7 @@ namespace TSMessages
 		UIViewController ViewController { get; }
 
 		[Export ("duration")]
-		float Duration { get; set; }
+		nfloat Duration { get; set; }
 
 		[Export ("messagePosition")]
 		TSMessageNotificationPosition MessagePosition { get; set; }
@@ -131,7 +131,7 @@ namespace TSMessages
 			[NullAllowed] string subtitle, 
 			[NullAllowed] UIImage image, 
 			TSMessageNotificationType notificationType, 
-			float duration, 
+			nfloat duration, 
 			UIViewController viewController, 
 			[NullAllowed] [BlockCallback] BlockCallback callback, 
 			[NullAllowed] string buttonTitle, 

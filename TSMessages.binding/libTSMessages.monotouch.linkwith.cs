@@ -1,4 +1,3 @@
-using System;
-using MonoTouch.ObjCRuntime;
+using ObjCRuntime;
 
-[assembly: LinkWith ("libTSMessages.monotouch.a", LinkTarget.Simulator | LinkTarget.ArmV7 | LinkTarget.ArmV7s, ForceLoad = true)]
+[assembly: LinkWith ("libTSMessages.monotouch.a", LinkTarget.Simulator | LinkTarget.Simulator64 | LinkTarget.ArmV7 | LinkTarget.ArmV7s | LinkTarget.Arm64, ForceLoad = true)]

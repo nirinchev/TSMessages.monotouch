@@ -14,6 +14,7 @@
 		5136896E1AB7295900391C2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5136896D1AB7295900391C2F /* Images.xcassets */; };
 		513689711AB7295900391C2F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5136896F1AB7295900391C2F /* LaunchScreen.xib */; };
 		5136897D1AB7295900391C2F /* TSMessagesWrapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5136897C1AB7295900391C2F /* TSMessagesWrapperTests.m */; };
+		ADBE3D2088D41CD8B93B8EC8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB8924DBFD530FE58F427F1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CB8924DBFD530FE58F427F1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5136895D1AB7295900391C2F /* TSMessagesWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSMessagesWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513689611AB7295900391C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513689621AB7295900391C2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		513689761AB7295900391C2F /* TSMessagesWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSMessagesWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5136897B1AB7295900391C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5136897C1AB7295900391C2F /* TSMessagesWrapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSMessagesWrapperTests.m; sourceTree = "<group>"; };
+		DA177586ED2CAE89309F141B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DAD03E34F1F3DA1D25C7A0A1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADBE3D2088D41CD8B93B8EC8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,8 @@
 				5136895F1AB7295900391C2F /* TSMessagesWrapper */,
 				513689791AB7295900391C2F /* TSMessagesWrapperTests */,
 				5136895E1AB7295900391C2F /* Products */,
+				7AED2496B6E65AA19AC7568E /* Pods */,
+				7746AD31C113267BD32DED63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +126,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7746AD31C113267BD32DED63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CB8924DBFD530FE58F427F1 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7AED2496B6E65AA19AC7568E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA177586ED2CAE89309F141B /* Pods.debug.xcconfig */,
+				DAD03E34F1F3DA1D25C7A0A1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 513689801AB7295900391C2F /* Build configuration list for PBXNativeTarget "TSMessagesWrapper" */;
 			buildPhases = (
+				153C1ED875B83318936E6EED /* Check Pods Manifest.lock */,
 				513689591AB7295800391C2F /* Sources */,
 				5136895A1AB7295800391C2F /* Frameworks */,
 				5136895B1AB7295800391C2F /* Resources */,
+				8C08C80AFC7A6E731FBE7BEC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +239,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		153C1ED875B83318936E6EED /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C08C80AFC7A6E731FBE7BEC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		513689591AB7295800391C2F /* Sources */ = {
@@ -343,6 +402,7 @@
 		};
 		513689811AB7295900391C2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA177586ED2CAE89309F141B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TSMessagesWrapper/Info.plist;
@@ -353,6 +413,7 @@
 		};
 		513689821AB7295900391C2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAD03E34F1F3DA1D25C7A0A1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TSMessagesWrapper/Info.plist;
@@ -414,6 +475,7 @@
 				513689821AB7295900391C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		513689831AB7295900391C2F /* Build configuration list for PBXNativeTarget "TSMessagesWrapperTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +484,7 @@
 				513689851AB7295900391C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
